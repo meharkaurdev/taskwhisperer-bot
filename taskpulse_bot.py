@@ -608,9 +608,13 @@ async def clear_tasks(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
     # Main function
+# Main function
 def main():
-    # Initialize bot
-    TOKEN = "YOUR_BOT_TOKEN_HERE"  # <-- DELETE THIS ENTIRE LINE
+    # Initialize bot using environment variable
+    TOKEN = os.getenv("BOT_TOKEN")
+    if not TOKEN:
+        raise ValueError("❌ BOT_TOKEN environment variable not set!")
+
     application = Application.builder().token(TOKEN).build()
 
     # Handlers
