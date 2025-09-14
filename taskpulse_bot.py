@@ -605,10 +605,12 @@ async def clear_tasks(update: Update, context: ContextTypes.DEFAULT_TYPE):
     conn.close()
     await update.message.reply_text("🗑️ All tasks cleared!")
 
-# Main function
+
+
+    # Main function
 def main():
     # Initialize bot
-    TOKEN = "YOUR_BOT_TOKEN_HERE"  # <-- REPLACE THIS!
+    TOKEN = "YOUR_BOT_TOKEN_HERE"  # <-- DELETE THIS ENTIRE LINE
     application = Application.builder().token(TOKEN).build()
 
     # Handlers
